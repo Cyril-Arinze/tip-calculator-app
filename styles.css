@@ -1,0 +1,218 @@
+:root{
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    border: none;
+}
+body{
+    background-color:var(--Light-grayish-cyan);
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: 1fr auto;
+    
+}
+main{
+    
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: auto ;
+    justify-items: center;
+    padding: 10px;
+
+
+
+}
+/* logo */
+/* tip-calculator */
+.tip-calculator{
+    background-color:var(--White);
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 
+    "inputs"
+    "outputs";
+    padding: 10px;
+    border-radius: 15px;
+}
+
+
+/* inputs */
+input,  input:focus{
+    border: none;
+    background-color:transparent;
+    outline: none; 
+    height: 100%;
+    grid-column: span 3/-1;
+    direction: rtl;
+    font-size: 24px;
+    color: var(--Very-dark-cyan);
+
+}
+.text-input{
+    background-color:var(--Light-grayish-cyan);
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    height: 40px;
+    border-radius: 5px;
+
+}
+.text-input:hover{
+   border: 1.5px solid var(--Very-dark-cyan);
+   cursor: pointer;
+}
+
+.Custom{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+    padding-right: 5px;
+}
+.Custom input{
+    font-size: 1.17rem;
+    
+}
+.inputs{
+    display: grid;
+    grid-gap: 20px;
+    grid-area: inputs;
+    padding: 10px;
+    
+}
+.inputs button{
+    background-color: var(--Very-dark-cyan);
+    color: var(--White);
+    border-radius: 5px;
+    font-size: 1.17rem;
+    font-weight: 300;
+    border: none;
+    height: 40px;
+}
+.inputs button:hover,  .Reset-btn:hover{
+    background-color: var(--Light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+    cursor: pointer;
+}
+.inputs button.active{
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+
+.input2{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 35px);
+}
+.input2>p{
+    grid-column: 1/-1;
+    align-self:center;
+}
+.input3, .input1{
+    position: relative;
+}
+.error-msg{
+    font-size: x-small;
+    position: absolute;
+    right: 5px;
+    top: 8px;    
+}
+.error-msg.hidden{
+    display: none;
+}
+/* outputs */
+.outputs{
+    grid-area: outputs;
+    padding: 20px 15px;
+    display: grid;
+    grid-gap: 20px;
+    background-color: var(--Very-dark-cyan);
+    color: var(--White);
+    border-radius: 15px;
+}
+.outputs h2, .outputs p{
+    color: var(--Strong-cyan);
+}
+.outputs h4, .outputs p{
+    font-size: small;
+}
+.outputs h2{
+    font-size: 30px;
+}
+.output{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+.output div:last-of-type {
+    direction: rtl;
+}
+.Reset-btn{
+    height: 35px;
+    align-self: flex-end;
+    text-transform: uppercase;
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+    font-size: 1rem;
+    border-radius: 5px;
+}
+button:disabled{
+   cursor: not-allowed !important;
+   pointer-events: none;
+   opacity: .2;
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+/* media queries */
+@media (min-width:500px ) and (max-width:1023px) {
+    .tip-calculator{
+        width: 70%;
+    }
+}
+@media (min-width:1024px) {
+    .tip-calculator{
+        width: 50%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "inputs outputs";
+        padding: 20px;
+    }
+    .Custom{
+       
+        padding-right: 5px;
+    }
+    
+    .input2{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 35px);
+    
+    }
+    .outputs h2{
+        font-size: 40px;
+    }
+    .outputs{
+        padding: 30px;
+    }
+}
