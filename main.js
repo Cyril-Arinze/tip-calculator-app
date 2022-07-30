@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-    
+
   const tipButtons = document.querySelectorAll(".input2>button");
 
   const tipPerPerson = document.querySelector(".Tip-person");
@@ -68,7 +68,8 @@
   }
 
   customValue.addEventListener("keydown", function (evt) {
-    if (evt.key === "Enter") {
+    console.log(evt.key)
+    if (evt.key === "Enter" || evt.key === "Tab") {
 
       const customValue = parseFloat(document.querySelector("#custom").value);
 
