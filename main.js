@@ -68,8 +68,8 @@
   }
 
   customValue.addEventListener("keydown", function (evt) {
-    console.log(evt.key)
-    if (evt.key === "Enter" || evt.key === "Tab") {
+    
+    if (evt.key === "Enter" || evt.key == "ArrowRight") {
 
       const customValue = parseFloat(document.querySelector("#custom").value);
 
