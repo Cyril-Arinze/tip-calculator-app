@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 :root{
     --Strong-cyan: hsl(172, 67%, 45%);
     --Very-dark-cyan: hsl(183, 100%, 15%);
@@ -20,6 +21,7 @@ body{
     height: 100vh;
     width: 100vw;
     grid-template-rows: 1fr auto;
+    padding-bottom: 3rem;
     
 }
 main{
@@ -215,4 +217,71 @@ button:disabled{
     .outputs{
         padding: 30px;
     }
+}
+
+.bi{
+    font-size: 30px;
+
+}
+.icons__rapper{
+    position: fixed;
+    bottom: 10px;
+    right:20px;
+    color: var(--Very-dark-cyan);
+    aspect-ratio: 1;
+    height: 190px;
+}
+.toogle__btn, .floating__btn{
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.toogle__btn{
+    bottom: 65px;
+    right:0;
+    background-color:var(--Very-dark-cyan);
+    color: var(--Strong-cyan);
+    width: 55px;
+}
+.floating__btn-hide{
+    opacity: 0;
+    transition:all 700ms;
+}
+.floating__btn-show{
+    opacity: 100;
+    transition:all 1000ms;
+}
+
+.floating__btn{
+    width: 45px;
+    color:var(--Very-dark-cyan);
+    background-color: var(--Strong-cyan); 
+}
+.floating__btn:hover{
+    width: 55px;
+    background-color:var(--Very-dark-cyan);
+    color: var(--Strong-cyan); 
+    cursor: pointer;
+    transition:all 500ms;
+}
+
+.floating__btn:nth-of-type(1){
+    bottom: 0;
+    right: 70px;
+}
+.floating__btn:nth-of-type(2){
+    bottom: 30px;
+    left: 10px;
+}
+.floating__btn:nth-of-type(3){
+    bottom: 100px;
+    left: 10px;
+}
+.floating__btn:nth-of-type(4){
+    top: 0;
+    left: 70px;
 }
