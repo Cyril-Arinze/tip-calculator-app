@@ -45,14 +45,14 @@
         tipPerPerson.innerHTML = `$0.00`;
         totalPerPerson.innerHTML = `$0.00`;
 
-        
+
         if (tipPerPerson.innerHTML === `$0.00`) {
           resetBtn.setAttribute("disabled", "disabled");
         }
 
         for (let i = 0; i < tipButtons.length; i++) {
-            tipButtons[i].classList.remove("active");
-            
+          tipButtons[i].classList.remove("active");
+
         }
       });
     } else if (bill) {
@@ -68,15 +68,15 @@
   }
 
   customValue.addEventListener("keydown", function (evt) {
-    
+
     if (evt.key === "Enter" || evt.key == "ArrowRight") {
 
       const customValue = parseFloat(document.querySelector("#custom").value);
 
-        for (let i = 0; i < tipButtons.length; i++) {
-            tipButtons[i].classList.remove("active");
-            
-        }
+      for (let i = 0; i < tipButtons.length; i++) {
+        tipButtons[i].classList.remove("active");
+
+      }
 
       if (customValue) {
 
@@ -84,25 +84,25 @@
 
 
       }
-      else{
+      else {
 
-        alert("enter a valid number");
+        swal("Error", "enter a valid number!", "error");
 
       }
     }
   });
   tipButtons.forEach((tipButton) => {
-    
-    tipButton.addEventListener("click", function () {
-        for (let i = 0; i < tipButtons.length; i++) {
-            tipButtons[i].classList.remove("active");
-            
-        }
-        
-        this.classList.add("active")
-        const tipPercentage = this.children[0].innerHTML;
 
-        tipCalculator(tipPercentage);
+    tipButton.addEventListener("click", function () {
+      for (let i = 0; i < tipButtons.length; i++) {
+        tipButtons[i].classList.remove("active");
+
+      }
+
+      this.classList.add("active")
+      const tipPercentage = this.children[0].innerHTML;
+
+      tipCalculator(tipPercentage);
 
     });
   });
